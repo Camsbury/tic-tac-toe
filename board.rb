@@ -1,9 +1,11 @@
 class Game
+	# Board class
 	class Board
 
 		attr_accessor :squares
 		attr_reader :winning_rows
 
+		# initializes the square indices and possible rows
 		def initialize
 			@squares = []
 
@@ -12,6 +14,7 @@ class Game
 			update
 		end
 
+		# updates the possible rows with the symbol values
 		def update
 			@winning_rows = []
 
@@ -36,9 +39,9 @@ class Game
 			[2,4,6].each do |i|
 				@winning_rows[7] << @squares[i]
 			end
-
 		end
 
+		# prints out the board
 		def display
 			shown = "\n   TIC TAC TOE\n       a b c"
 			3.times do |i|
